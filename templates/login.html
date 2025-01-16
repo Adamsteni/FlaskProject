@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #028338;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        /* Header Section */
+        .header-container {
+            width: 100%;
+            background-color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-styling {
+            width: 50%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        /* Form Section */
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 350px;
+            background-color: rgb(247, 249, 250);
+            border: 2px solid rgb(252, 249, 249);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 150px; /* Offset to account for fixed header */
+        }
+
+        .log {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="email"], select {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit {
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #f7111c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit:hover {
+            background-color: #d6101a;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .logo-styling {
+                width: 70%;
+            }
+
+            .form-container {
+                width: 90%;
+            }
+
+            .submit {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-styling {
+                width: 90%;
+            }
+
+            .form-container {
+                width: 100%;
+                margin-top: 120px; /* Adjust margin for smaller screens */
+            }
+
+            input[type="text"], input[type="email"], select {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .submit {
+                font-size: 12px;
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header-container">
+        <img src="{{ url_for('static', filename='images/fudlogo.png') }}" alt="Logo" class="logo-styling">
+    </div>
+
+    <!-- Login Form Section -->
+    <div class="form-container">
+        <div class="login">
+            <h2 class="log">OTP Authentication</h2>
+        </div>
+
+        <!-- Login form -->
+        <form id="otpForm" action="{{ url_for('login') }}" method="post" onsubmit="return validateForm()">
+
+
+            <div class="form-group">
+                <label for="send_via" class="label">Send OTP Via:</label>
+                <select id="send_via" name="send_via" required>
+                    <option value="">Select an option</option>
+                <option value="email">Email</option>
+                </select>
+            </div>
+
+            <div id="email_field" class="form-group hidden">
+                <label for="email" class="label">Email Address:</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Send OTP" class="submit">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Show/hide email field based on OTP method
+        document.getElementById('send_via').addEventListener('change', function () {
+            const emailField = document.getElementById('email_field');
+            emailField.classList.toggle('hidden', this.value !== 'email');
+        });
+
+        // Validate form fields
+        function validateForm() {
+            const sendVia = document.getElementById('send_via').value;
+            const email = document.getElementById('email').value;
+
+            if (sendVia === 'email' && !email) {
+                alert('Please enter your email address.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

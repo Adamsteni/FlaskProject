@@ -1,0 +1,145 @@
+body{
+     background-color: #028338;
+}
+.header{
+    background-color:white;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 90%;
+}
+.header img{
+    width: 100%;
+    max-width:700px;
+
+}
+
+.rectangle-2{
+    display: flex; 
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+        
+} 
+.h1{
+    font-size: 30px;
+    color: rgb(2, 97, 2);
+    font-family: 'Roboto';
+}
+.paragraph1{
+    font-size: 14px;
+    color: black;
+    font-family:'Roboto';
+    
+}
+.paragraph2{ /*For the second paragrraph*/
+    font-size: 13.6px;
+    color: rgb(250, 53, 53);
+    font-family:'Roboto';
+}
+.paragraph3{ /*For the 3rd paragraph*/
+    font-size: 13.6px;
+    color: rgb(22, 22, 22);
+    font-family:'Roboto';
+}
+.link{/*This is to input the link for the ICT*/
+    color: rgb(84, 203, 243);
+    text-decoration: none;
+}
+.link:hover{/*This works when you are hovering over the link*/
+    color: rgb(2, 42, 104);
+    text-decoration: underline;
+}
+.next-h1{
+    font-size: 25px;
+    color: rgb(2, 97, 2);
+    font-family:'Roboto';
+}
+.line2{
+    border:20px;
+    background-color: rgb(209, 205, 205);
+    height: 1px;
+    /* width: 550px; */
+    /*margin: 20px;*/
+}
+.left_hand{
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+.left_hand li{
+    font-family:'Roboto';
+    font-size: 13.6px;
+}
+.Note{
+    font-size: 13.6px;
+    color: rgb(22, 22, 22);
+    font-family:'Roboto';
+}
+
+
+.right-hand{
+    background-color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5px;
+    padding: 10px;
+    width: 30%;
+}
+.right-hand input{
+    display: block;
+
+    width: 90%;
+    font-size: 14px;
+    padding: 5px 5px;
+    margin-bottom: 5px;
+}
+label{
+    font-size: 12px;
+    font-weight: normal;
+}
+.submitButton{
+    
+    cursor: pointer;
+   display: block;
+   width: 100%;
+
+    margin: 10px 0;
+    padding: 5px 0;
+    text-align: center;
+}
+.for-button{
+    font-size: 10px;
+ 
+    background-color: red;
+    border-radius:5px;
+    cursor: pointer;
+    padding: 5px 5px;
+    margin-left: auto;
+    border: none;
+    color: white;
+    font-weight: normal;
+}
+
+@media (max-width: 916px ) {
+    .rectangle-2 {
+        flex-direction: column;
+    }
+
+    
+
+    .header{
+        width: 100%;
+    }
+
+    .left_hand{
+        padding: 0 15px;
+    }
+
+    .right-hand{
+        width: 90%;
+    }
+
+    body{
+        padding: 0 20px;
+    }
+
+}

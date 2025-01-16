@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FUD MYPORTAL | LOGIN</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/fudstyle.css">
+    <script src="static/js/script.js" defer></script> <!--This is my JavaScript file -->
+
+</head>
+<body>
+    <div class="header">
+        <img src="static/images/fudlogo.png" alt="logo">
+    </div>
+    <div class="rectangle-2">
+        <div class="left_hand">
+            <h1 class="h1"><b>FUD PORTAL</b></h1>
+            <hr>
+            <p class="paragraph1">Welcome to the Federal University Dutse portal. All services on this portal are restricted,<br> hence, only authenticated users can access them. Please login.</p>
+            <p class="paragraph2">Students should use their Registration numbers as both usernames and passwords when<br> logging in for the first time.</p>
+            <p class="paragraph3">For all enquiries and/or complaints regarding Registration, send an email to <br><a href="mailto:ictsupport@fud.edu.ng" class="link">ictsupport@fud.edu.ng</a></p>
+            <h1 class="next-h1">FRESH STUDENT REGISTRATION GUIDELINES</h1>
+            <hr>
+            <ol>
+            <!-- Registration guidelines content -->
+                <li>All School fees Registration must be through this Portal and<strong> NOT THROUGH <br>REMITA WEBSITE</strong></li>
+                <li>Once verified by the Head of Department, log onto this portal with your<strong> JAMB<br> Registration Number</strong> as Username and<strong> STATE OF ORIGIN</strong>  (in<strong> CAPITAL</strong>  letters) as<br> Password.</li>
+                <li>Click School Fees to generate payment invoice, click Remita logo to Pay online with<br> a debit card or print invoice receipt to pay at FUD Microfinance or any commercial<br> Bank.</li>
+                <li>Proceed to the respective <strong>Faculty Accountant Office</strong> for submission of a copy of <br><strong> Remita Payment receipt</strong> for stamp and verification.</li>
+                <li>After payment, click Generate <strong> REGISTRATION NUMBER</strong>  to generate your<br> Registration Number.</li>
+                <li><strong>CLICK GO TO SCHOOL </strong>  to logout and use your newly generated <strong>REGISTRATION<BR> NUMBER</strong> as Username and Password to login.</li>
+                <li>The system will prompt you to change your password, and make sure your<br> password is strong (Combination of letters, numbers, and special characters)</li>
+                <li>Upload your Passport and select Biodata to update your biodata</li>
+                <li>Print Clinic form to proceed to the University Clinic for Lab test.</li>
+                <li>Course Registration to register courses. Students are strongly advised to<br> seek guidance from their respective level coordinators on the courses they are<br> supposed to register.</li>
+                <li>To apply for accommodation, click on Hostel to reserve bed space.</li>
+            </ol>
+            <p class="Note"><strong>Note:</strong> Only Fresh and Final year students are eligible for accommodation, and the <br> allocation of bed spaces in both male and Female Hostel will be done on a first-come-first-<br>served basis.</p>
+        </div>
+        <div class="right-hand">
+            <!-- Login form elements -->
+           
+            <form method="POST" action="{{ url_for('login') }}"> <!-- Form action pointing to the login route -->
+            <div>
+                <label class="h2-1" for="username">Username</label>
+                <input type="text" class="username" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div>
+                    <label class="pword" for="password" >Password</label>
+                <input type="password" class="password" id="password" name="password" placeholder="Password" required>
+            </div>
+
+                <button type="submit" class="submitButton" style=" background-color: #f7111c; color: white; text-decoration: none; border-radius: 5px; border: none;">Login</button>
+
+                <!-- Submit button -->
+            </form>
+                        
+            <!-- Forgot password button -->
+            <button class="for-button" style="display: block;">Forgot Password</button> 
+        </div>
+    </div>
+    
+    
+</body>
+</html>
